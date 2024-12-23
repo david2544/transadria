@@ -1,101 +1,175 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+    <div className="flex flex-col min-h-screen">
+      {/* Hero Section */}
+      <section className="relative bg-gray-900 text-white">
         <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+          src="/hero-home-page.webp"
+          alt="Transadria trucks on the road"
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+          className="opacity-30"
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+        <div className="relative container mx-auto px-4 py-24 sm:py-32">
+          <h1 className="text-4xl sm:text-5xl font-bold mb-4">
+            Transadria: Your Trusted European Transport Partner Since 1994
+          </h1>
+          <h2 className="text-2xl sm:text-3xl mb-6">
+            Dependable freight solutions for businesses across Europe
+          </h2>
+          <p className="text-lg mb-8 max-w-2xl">
+            From our base in Romania, we&apos;ve delivered goods for thousands
+            of customers throughout Europe. Our modern fleet and specialized
+            expertise ensure that your cargo arrives safely and on time.
+          </p>
+          <Link
+            href="/contact"
+            className="bg-[#4a55cf] text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-[#3a45bf] transition-colors"
           >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            Request a Quote
+          </Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* About Us Section */}
+      <section className="py-16 bg-white dark:bg-gray-800">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center">
+            <div className="md:w-1/2 mb-8 md:mb-0">
+              <h2 className="text-3xl font-bold mb-4 text-[#4a55cf]">
+                About Transadria
+              </h2>
+              <p className="text-lg">
+                Established in 1994, Transadria has grown into one of
+                Europe&apos;s most dependable transport companies. Over the
+                years, we&apos;ve handled thousands of shipments, building
+                strong relationships with businesses across the continent. Our
+                commitment to reliability, safety, and customer satisfaction
+                sets us apart.
+              </p>
+            </div>
+            <div className="md:w-1/2 md:pl-8">
+              <Image
+                src="/truck-light.jpg"
+                width={720}
+                height={959}
+                alt="Transadria company logo"
+                className="dark:hidden"
+              />
+              <Image
+                src="/truck-dark.jpg"
+                width={720}
+                height={959}
+                alt="Transadria company logo"
+                className="hidden dark:block"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Services Section */}
+      <section className="py-16 bg-gray-100 dark:bg-gray-900">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-8 text-center text-[#4a55cf]">
+            What We Offer
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Normal Goods Transport",
+                description:
+                  "We handle the safe and timely transport of general freight using our modern fleet. Our professional drivers ensure each delivery meets the highest standards.",
+                icon: "🚚",
+              },
+              {
+                title: "Container Transport",
+                description:
+                  "Whether you need full container loads or less-than-container loads, Transadria offers secure container transport across Europe.",
+                icon: "📦",
+              },
+              {
+                title: "Oversized Goods Transport",
+                description:
+                  "For cargo that exceeds standard dimensions, our specialized trucks and experienced team guarantee the safe delivery of oversized loads.",
+                icon: "🏗️",
+              },
+            ].map((service, index) => (
+              <div
+                key={index}
+                className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
+              >
+                <div className="text-4xl mb-4">{service.icon}</div>
+                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+                <p>{service.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="py-16 bg-white dark:bg-gray-800">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-8 text-center text-[#4a55cf]">
+            Why Transadria?
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                title: "Decades of Experience",
+                description:
+                  "Founded in 1994, our experience speaks for itself with thousands of successful deliveries.",
+              },
+              {
+                title: "Modern Fleet",
+                description:
+                  "Our trucks are equipped with the latest technology, ensuring both safety and efficiency.",
+              },
+              {
+                title: "Trusted by Thousands",
+                description:
+                  "We've built a reputation across Europe through consistent, reliable service.",
+              },
+              {
+                title: "Tailored Solutions",
+                description:
+                  "We adapt to your specific requirements, no matter the size or type of cargo.",
+              },
+            ].map((reason, index) => (
+              <div
+                key={index}
+                className="bg-white-100 dark:bg-gray-900 p-6 rounded-lg"
+              >
+                <h3 className="text-xl font-semibold mb-2">{reason.title}</h3>
+                <p>{reason.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action Section */}
+      <section className="py-16 bg-[#4a55cf] text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-4">
+            Ready to Transport Your Goods Across Europe?
+          </h2>
+          <p className="text-xl mb-8">
+            Let us handle the logistics so you can focus on your business.
+          </p>
+          <Link
+            href="/contact"
+            className="bg-white text-[#4a55cf] px-8 py-3 rounded-md text-lg font-semibold hover:bg-gray-100 transition-colors"
+          >
+            Get a Free Quote
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }
