@@ -1,33 +1,42 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
+import { useState } from "react";
+import { useLanguage } from "../components/LanguageProvider";
 
 export default function Contact() {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  })
+    name: "",
+    email: "",
+    message: "",
+  });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData(prevState => ({ ...prevState, [name]: value }))
-  }
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({ ...prevState, [name]: value }));
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    // Here you would typically send the form data to a server
-    console.log('Form submitted:', formData)
-    // Reset form after submission
-    setFormData({ name: '', email: '', message: '' })
-  }
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+    setFormData({ name: "", email: "", message: "" });
+  };
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold text-[#4a55cf] dark:text-white mb-6">Contact Us</h1>
+      <h1 className="text-4xl font-bold text-[#4a55cf] dark:text-white mb-6">
+        {t("contactUs")}
+      </h1>
       <form onSubmit={handleSubmit} className="max-w-lg mx-auto">
         <div className="mb-4">
-          <label htmlFor="name" className="block text-gray-700 dark:text-gray-300 mb-2">Name</label>
+          <label
+            htmlFor="name"
+            className="block text-gray-700 dark:text-gray-300 mb-2"
+          >
+            {t("name")}
+          </label>
           <input
             type="text"
             id="name"
@@ -39,7 +48,12 @@ export default function Contact() {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="email" className="block text-gray-700 dark:text-gray-300 mb-2">Email</label>
+          <label
+            htmlFor="email"
+            className="block text-gray-700 dark:text-gray-300 mb-2"
+          >
+            {t("email")}
+          </label>
           <input
             type="email"
             id="email"
@@ -51,7 +65,12 @@ export default function Contact() {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="message" className="block text-gray-700 dark:text-gray-300 mb-2">Message</label>
+          <label
+            htmlFor="message"
+            className="block text-gray-700 dark:text-gray-300 mb-2"
+          >
+            {t("message")}
+          </label>
           <textarea
             id="message"
             name="message"
@@ -66,10 +85,9 @@ export default function Contact() {
           type="submit"
           className="bg-[#4a55cf] text-white px-4 py-2 rounded-md hover:bg-[#3a45bf] transition-colors"
         >
-          Send Message
+          {t("sendMessage")}
         </button>
       </form>
     </div>
-  )
+  );
 }
-

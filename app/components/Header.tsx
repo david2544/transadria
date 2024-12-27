@@ -5,16 +5,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { Moon, Sun, Menu, X } from "lucide-react";
+import { useLanguage } from "./LanguageProvider";
 
 const Header = () => {
   const { theme, setTheme } = useTheme();
-  const [language, setLanguage] = useState("en");
+  const { language, setLanguage, t } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <header className="bg-white dark:bg-gray-800 shadow-md">
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
+          {/* Logo */}
           <Link
             href="/"
             className="text-2xl font-bold text-[#4a55cf] dark:text-white"
@@ -34,6 +36,8 @@ const Header = () => {
               className="h-10 hidden dark:block"
             />
           </Link>
+
+          {/* Mobile menu toggle */}
           <div className="flex items-center">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -41,6 +45,8 @@ const Header = () => {
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
+
+            {/* Navigation */}
             <nav
               className={`lg:flex ${
                 isMenuOpen ? "block" : "hidden"
@@ -52,7 +58,7 @@ const Header = () => {
                     href="/"
                     className="text-gray-600 dark:text-gray-300 hover:text-[#4a55cf] dark:hover:text-white block lg:inline-block"
                   >
-                    Home
+                    {t("home")}
                   </Link>
                 </li>
                 <li>
@@ -60,9 +66,10 @@ const Header = () => {
                     href="/contact"
                     className="text-gray-600 dark:text-gray-300 hover:text-[#4a55cf] dark:hover:text-white block lg:inline-block"
                   >
-                    Contact
+                    {t("contact")}
                   </Link>
                 </li>
+                {/* Theme Toggle */}
                 <li>
                   <button
                     onClick={() =>
@@ -73,10 +80,13 @@ const Header = () => {
                     {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
                   </button>
                 </li>
+                {/* Language Switch */}
                 <li>
                   <select
                     value={language}
-                    onChange={(e) => setLanguage(e.target.value)}
+                    onChange={(e) =>
+                      setLanguage(e.target.value as typeof language)
+                    }
                     className="bg-transparent text-gray-600 dark:text-gray-300 hover:text-[#4a55cf] dark:hover:text-white block lg:inline-block"
                   >
                     <option value="en">EN</option>
