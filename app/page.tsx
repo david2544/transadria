@@ -54,14 +54,14 @@ export default function Home() {
             </div>
             <div className="md:w-1/2 md:pl-8">
               <Image
-                src="/truck-light.jpg"
+                src="/truck-light.webp"
                 width={720}
                 height={959}
                 alt="Transadria company logo"
                 className="dark:hidden"
               />
               <Image
-                src="/truck-dark.jpg"
+                src="/truck-dark.webp"
                 width={720}
                 height={959}
                 alt="Transadria company logo"
