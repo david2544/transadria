@@ -44,7 +44,7 @@ const Header = () => {
             <nav
               className={`lg:flex ${
                 isMenuOpen ? "block" : "hidden"
-              } absolute lg:relative top-full left-0 lg:top-auto lg:left-auto w-full lg:w-auto bg-white dark:bg-gray-800 lg:bg-transparent z-50`}
+              } absolute lg:relative top-16 left-0 lg:top-auto lg:left-auto w-full lg:w-auto bg-white dark:bg-gray-800 lg:bg-transparent z-50`}
             >
               <ul className="flex flex-col lg:flex-row space-y-2 lg:space-y-0 lg:space-x-4 p-4 lg:p-0">
                 <li>
